@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
@@ -23,6 +23,10 @@ Route::get('/about-us', function () {
 
 Route::get('/contact-us', function () {
     return view('contact-us');
+});
+
+Route::get('/pictures', function () {
+    return view('pictures');
 });
 
 Auth::routes();
