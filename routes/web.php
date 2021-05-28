@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,10 @@ Route::get('/about-us', [IndexController::class, 'aboutus']);
 Route::get('/contact-us', [IndexController::class, 'contactus']);
 
 Route::get('/pictures', [IndexController::class, 'pics']);
+
+Route::get('/registration', [RegistrationController::class, 'register']);
+
+Route::post('/registration', [RegistrationController::class, 'store']);
 
 Auth::routes();
 
