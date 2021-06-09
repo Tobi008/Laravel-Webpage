@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrationController;
 
 /*
@@ -24,8 +25,9 @@ Route::get('/contact-us', [IndexController::class, 'contactus']);
 Route::get('/pictures', [IndexController::class, 'pics']);
 
 Route::get('/registration', [RegistrationController::class, 'register']);
-
 Route::post('/registration', [RegistrationController::class, 'store']);
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Auth::routes();
 

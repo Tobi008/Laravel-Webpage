@@ -1,11 +1,10 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <div class="container-fluid">
     <a class="navbar-brand" href="#">Laravel</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
@@ -18,14 +17,33 @@
         <li class="nav-item">
           <a class="nav-link" href="/pictures" >Pictures</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/registration" >Sign Up</a>
-        </li>
       </ul>
+
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      
+      <ul class="navbar-nav ">
+        @auth
+          <li class="nav-item">
+            <a class="nav-link" href="/registration" >{{auth()->user()->name}}</a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="/registration" >Logout</a>          
+          </li>
+      @endauth
+
+      @guest
+        <li class="nav-item">
+          <a class="nav-link" href="/registration" >Login</a>
+        </li>
+
+        <li>
+          <a class="nav-link" href="/registration" >Logout</a>          
+        </li>
+      @endguest
+      </ul>
     </div>
-  </div>
 </nav>
