@@ -1,6 +1,6 @@
 @section('sidebar')
     <div class="well">
-    <h3>SideBar</h3>
-    This is the SideBar
+        <h3>Profile</h3>
+         <a href=""> Edit Profile</a>
     </div>
     @show

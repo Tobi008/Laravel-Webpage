@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrationController;
 
@@ -26,6 +28,11 @@ Route::get('/pictures', [IndexController::class, 'pics']);
 
 Route::get('/registration', [RegistrationController::class, 'register']);
 Route::post('/registration', [RegistrationController::class, 'store']);
+
+Route::get('/login-form', [LoginController::class, 'index']);
+Route::post('/login-form', [LoginController::class, 'store']);
+
+Route::get('/logout', [LogoutController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

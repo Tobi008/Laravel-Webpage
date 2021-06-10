@@ -20,28 +20,29 @@
       </ul>
 
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2 p-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       
       <ul class="navbar-nav ">
         @auth
           <li class="nav-item">
-            <a class="nav-link" href="/registration" >{{auth()->user()->name}}</a>
+            <a class="nav-link" href="" >{{auth()->user()->name}}</a>
           </li>
 
-          <li>
-            <a class="nav-link" href="/registration" >Logout</a>          
-          </li>
+          <form action="/logout" method="post"  class="nav-item">
+            @csrf
+            <button type="submit" class="btn btn-primary"> Logout</button>
+        </form>
       @endauth
 
       @guest
         <li class="nav-item">
-          <a class="nav-link" href="/registration" >Login</a>
+          <a class="nav-link" href="/login-form" >Login</a>
         </li>
 
         <li>
-          <a class="nav-link" href="/registration" >Logout</a>          
+          <a class="nav-link" href="/registration" >Sign up</a>          
         </li>
       @endguest
       </ul>
