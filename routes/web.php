@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrationController;
 
@@ -33,6 +34,9 @@ Route::get('/login-form', [LoginController::class, 'index']);
 Route::post('/login-form', [LoginController::class, 'store']);
 
 Route::get('/logout', [LogoutController::class, 'store']);
+
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::post('/profile', [ProfileController::class, 'update']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

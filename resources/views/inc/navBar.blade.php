@@ -17,6 +17,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/pictures" >Pictures</a>
         </li>
+        @auth
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard" >Dashboard</a>
+        </li>
+        @endauth
       </ul>
 
       <form class="d-flex">
