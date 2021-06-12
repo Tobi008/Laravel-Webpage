@@ -30,7 +30,7 @@ Route::get('/pictures', [IndexController::class, 'pics']);
 Route::get('/registration', [RegistrationController::class, 'register']);
 Route::post('/registration', [RegistrationController::class, 'store']);
 
-Route::get('/login-form', [LoginController::class, 'index']);
+Route::get('/login-form', [LoginController::class, 'index'])->name("login-form");
 Route::post('/login-form', [LoginController::class, 'store']);
 
 Route::get('/logout', [LogoutController::class, 'store']);

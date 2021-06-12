@@ -13,7 +13,7 @@
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control @error('name')  @enderror" name="name" placeholder="Enter Name" value="{{auth()->user()->name}}">
+            <input type="text" class="form-control" name="name" placeholder="Enter Name" value="{{auth()->user()->name}}">
             
             @error('name')
                 <div class="alert">
