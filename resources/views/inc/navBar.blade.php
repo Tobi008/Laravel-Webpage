@@ -32,7 +32,7 @@
       <ul class="navbar-nav ">
         @auth
           <li class="nav-item">
-            <a class="nav-link" href="" >{{auth()->user()->name}}</a>
+            <a class="nav-link" href="/profile" >{{auth()->user()->name}}</a>
           </li>
 
           <form action="/logout" method="post"  class="nav-item">
